@@ -14,6 +14,10 @@ const accountSchema = new Schema({
         type: Number,
         required: true,
     },
+    monthlyIncome: {
+        type: Number,
+        required: true
+    },
     envelopes: {
         type: [Envelope]
     },

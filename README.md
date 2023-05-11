@@ -3,7 +3,9 @@
 ##Features
 - Checking account
 - Add money to checking
+- Subtract money from checking (with tag?)
 - Expense Tracking, with date of incurrment, section with expenses due, click to apply (subtracts from checking)
+- Add tags to expenses?
 - Cashflow calculator
 - Checking account envelopes
 - Log In/Out
