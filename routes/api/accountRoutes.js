@@ -1,7 +1,7 @@
 const { Account } = require('../../models/Account');
 
 //To deduct expense ammount from checking balance once it's applied
-router.put("/account/:id", async ({ body, params }, res) => {
+router.put("/account/:id/applyExpense", async ({ body, params }, res) => {
     try {
         const data = await Account.updateOne({
             "_id": params.id
