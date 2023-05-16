@@ -46,3 +46,14 @@ router.put("/account/:id/dueIn", async ({ body, params }, res) => {
         res.status(400).json(err)
     }
 });
+
+// Add a new amount receivable
+router.post("/newAmountReceivable", async ({ body, params }, res) => {
+   
+});
+
+// collect amount receivable / remove amount receivable
+
+// new amount payable
+
+// pay amount payable / remove amount payable

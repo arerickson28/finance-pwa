@@ -8,6 +8,8 @@
 - Add tags to expenses?
 - Cashflow calculator
 - Checking account envelopes
+- Amounts Payable
+- Amounts Receivable
 - Log In/Out
 - Password Reset
 
