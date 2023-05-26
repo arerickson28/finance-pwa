@@ -16,4 +16,4 @@ const envelopeSchema = new Schema({
 
 const Envelope = mongoose.model("Envelope", envelopeSchema);
 
-module.exports = Envelope;
+module.exports = { Envelope, envelopeSchema };

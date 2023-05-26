@@ -1,4 +1,16 @@
+const router = require('express').Router();
+
 const { Account } = require('../../models/Account');
+
+
+router.get("/account/hey", async (req, res) => {
+    try {
+        res.send("hey")
+    } catch (err) {
+        console.log(err)
+    }
+})
+
 
 //To deduct expense ammount from checking balance once it's applied
 router.put("/account/:id/applyExpense", async ({ body, params }, res) => {
@@ -57,3 +69,5 @@ router.post("/newAmountReceivable", async ({ body, params }, res) => {
 // new amount payable
 
 // pay amount payable / remove amount payable
+
+module.exports = router;

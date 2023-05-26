@@ -1,3 +1,5 @@
+const router = require('express').Router();
+
 const { Envelope } = require('../../models/Envelope');
 
 //creates a new envelope for the account
@@ -21,3 +23,5 @@ router.post("/envelope", ({body}, res) => {
         res.status(404).json(err);
       });
   });
+
+  module.exports = router;
