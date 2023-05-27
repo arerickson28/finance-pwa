@@ -13,7 +13,7 @@ const expenseSchema = new Schema({
         required: true,
     },
     frequency: {
-        type: Date,
+        type: String,
     }
 })
 
