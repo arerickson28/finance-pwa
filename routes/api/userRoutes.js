@@ -82,8 +82,8 @@ router.post("/user", ({body}, res) => {
       });
   })
 
-  //add an existing expense to list of due expenses
-  router.put("/user/due/:id", async (req, res) => {
+  //get a specific expense
+  router.get("/user/expense/:id", async (req, res) => {
 
     try {
         await User.find(
@@ -94,35 +94,34 @@ router.post("/user", ({body}, res) => {
              {"account.expenses.$": 1}
         )
 
-        // const expenseDue = await User.updateOne(
-        //     { 'userName': 'testUser' },
-        //     { $push: { 'account.due': expense } }
-        //     )
-        // .then( async (expense) => {
-        //     await User.updateOne(
-        //         { 'userName': 'testUser' },
-        //         { $push: { 'account.due': expense } }
-        //         )
-        // }
-           
-        // )
+     
         .then((data) => {
             res.json(data)
         })
     
        
-        res.json(expenseDue)
+     
         // res.send("hi")
         
     } catch (err) {
         res.status(400).json(err)
     }
 
-   
+   //put an expense into expenses due
+    router.post("/user/expenseDue/:id", async ({body}, res) => {
 
+        try {
+            const expenseDue = await User.updateOne(
+                { 'userName': 'testUser' },
+                { $push: { 'account.due': body } }
+                )
+            res.json(expenseDue)
+        } catch (err) {
+            res.status(400).json(err)
+        }
+     
+    })
     
-
-
   })
 
 
