@@ -29,7 +29,10 @@ function Expenses({expenses}) {
                     <Expense 
                     name={expense.expenseName} 
                     amount = {expense.amount} 
-                    frequncy = {expense.frequency}/>
+                    frequncy = {expense.frequency}
+                    expenseId = {expense._id}
+                    />
+                    
                 )
             })}
             </OrangeExpensesDiv>
