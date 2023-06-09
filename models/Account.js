@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const {Envelope, envelopeSchema} = require("./Envelope")
 const {Expense, expenseSchema} = require("./Expense")
 const {Income, incomeSchema} = require("./Income")
-// const {User, userSchema} = require("./User")
+
 
 const Schema = mongoose.Schema;
 
@@ -11,7 +11,11 @@ const accountSchema = new Schema({
         type: String,
         required: true
     },
-    checking: {
+    name: {
+        type: String,
+        required: true
+    },
+    balance: {
         type: Number
     }
 })

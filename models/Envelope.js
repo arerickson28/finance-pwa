@@ -12,11 +12,10 @@ const envelopeSchema = new Schema({
         required: true,
         trim: true,
     },
-    envelopeAmount: {
+    envelopeBalance: {
         type: Number,
         required: true,
     }
-    //transaction list??
 })
 
 const Envelope = mongoose.model("Envelope", envelopeSchema);

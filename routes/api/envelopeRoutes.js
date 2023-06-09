@@ -46,4 +46,15 @@ router.post("/", ({body}, res) => {
     })
   })
 
+  //update envelope balance
+  router.put("/envelopeId/:envelopeId", (req, res) => {
+    Envelope.findByIdAndUpdate(req.params.envelopeId, {"envelopeBalance": req.body.newBalance})
+    .then(envelope => {
+      res.json(envelope)
+    })
+    .catch(err => {
+      res.status(404).json(err)
+    })
+  })
+
   module.exports = router;

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const incomeSchema = new Schema({
     accountId: {
-        type: Number,
+        type: String,
         required: true
     },
     incomeName: {

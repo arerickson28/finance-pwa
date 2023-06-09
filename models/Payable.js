@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const payableSchema = new Schema({
     accountId: {
-        type: Number,
+        type: String,
         required: true
     },
     amount: {
