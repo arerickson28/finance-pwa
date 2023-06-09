@@ -2,25 +2,24 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const incomeSchema = new Schema({
+const payableSchema = new Schema({
     accountId: {
         type: Number,
         required: true
-    },
-    incomeName: {
-        type: String,
-        required: true,
-        trim: true,
     },
     amount: {
         type: Number,
         required: true,
     },
-    frequency: {
+    recipient: {
         type: String,
+        required: true
+    },
+    notes: {
+        type: String
     }
 })
 
-const Income = mongoose.model("Income", incomeSchema);
+const Payable = mongoose.model("Payable", payableSchema);
 
-module.exports = {Income, incomeSchema};
+module.exports = {Payable, payableSchema};

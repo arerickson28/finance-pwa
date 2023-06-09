@@ -7,26 +7,12 @@ const {Income, incomeSchema} = require("./Income")
 const Schema = mongoose.Schema;
 
 const accountSchema = new Schema({
-    // user: userSchema,
-    // checkingAmount: {
-    //     type: Number,
-    //     required: true,
-    // },
-    checking: {
-        type: Number
-    },
-    monthlyIncome: {
+    userId : {
         type: Number,
         required: true
     },
-    envelopes: {
-        type: [envelopeSchema]
-    },
-    expenses: {
-        type: [expenseSchema]
-    },
-    incomes: {
-        type: [incomeSchema]
+    checking: {
+        type: Number
     }
 })
 

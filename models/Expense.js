@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const expenseSchema = new Schema({
+    accountId: {
+        type: Number,
+        required: true
+    },
     expenseName: {
         type: String,
         required: true,
@@ -14,6 +18,9 @@ const expenseSchema = new Schema({
     },
     frequency: {
         type: String,
+    },
+    isDue: {
+        type: Boolean,
     }
 })
 

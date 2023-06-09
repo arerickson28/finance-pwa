@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const envelopeSchema = new Schema({
+    accountId: {
+        type: Number,
+        required: true
+    },
     envelopeName: {
         type: String,
         required: true,

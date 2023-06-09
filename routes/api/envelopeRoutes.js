@@ -3,10 +3,10 @@ const router = require('express').Router();
 const { Envelope } = require('../../models/Envelope');
 
 //creates a new envelope for the account
-router.post("/envelope", ({body}, res) => {
+router.post("/", ({body}, res) => {
     Envelope.create(body)
-      .then(dbEnvelope => {
-        res.json(dbEnvelope);
+      .then(envelope => {
+        res.json(envelope);
       })
       .catch(err => {
         res.status(404).json(err);
@@ -14,14 +14,25 @@ router.post("/envelope", ({body}, res) => {
   });
 
   //retrieves all the envelopes for the account
-  router.get("/envelope", (req, res) => {
-    Envelope.find({})
-      .then(dbEnvelope => {
-        res.json(dbEnvelope);
+  router.get("/accountId/:accountId", (req, res) => {
+    Envelope.find({"accountId": req.params.accountId})
+      .then(envelopes => {
+        res.json(envelopes);
       })
       .catch(err => {
         res.status(404).json(err);
       });
   });
+
+  //retrieve an envelope
+  router.get("/envelopeId/:envelopeId", (req, res) => {
+    Envelope.findOne({"_id": req.params.envelopeId})
+    .then(envelope => {
+      res.json(envelope);
+    })
+    .catch(err => {
+      res.status(404).json(err);
+    })
+  }) 
 
   module.exports = router;
