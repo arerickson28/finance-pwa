@@ -16,6 +16,7 @@ const envelopeSchema = new Schema({
         type: Number,
         required: true,
     }
+    //transaction list??
 })
 
 const Envelope = mongoose.model("Envelope", envelopeSchema);

@@ -35,4 +35,15 @@ router.post("/", ({body}, res) => {
     })
   }) 
 
+  //delete an envelope
+  router.delete("/envelopeId/:envelopeId", (req, res) => {
+    Envelope.deleteOne({"_id": req.params.envelopeId})
+    .then(envelope => {
+      res.json(envelope);
+    })
+    .catch(err => {
+      res.status(404).json(err)
+    })
+  })
+
   module.exports = router;
