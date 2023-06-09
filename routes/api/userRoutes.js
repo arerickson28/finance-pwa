@@ -15,7 +15,7 @@ router.post("/", ({body}, res) => {
 
 //get a user 
 router.get("/userId/:userId", (async (req, res) => {
-  await User.findOne({"_id": req.params.id})
+  await User.findOne({"_id": req.params.userId})
   .then(user => {
     res.json(user)
   })

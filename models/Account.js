@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 
 const accountSchema = new Schema({
     userId : {
-        type: Number,
+        type: String,
         required: true
     },
     checking: {

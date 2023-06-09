@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const envelopeSchema = new Schema({
     accountId: {
-        type: Number,
+        type: String,
         required: true
     },
     envelopeName: {
