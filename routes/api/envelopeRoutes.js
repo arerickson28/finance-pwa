@@ -57,18 +57,32 @@ router.post("/", ({body}, res) => {
   //   })
   // })
 
-  //subtract from envelope balance
+  //add/subtract from envelope balance
   router.put("/envelopeId/:envelopeId", (req, res) => {
-    Envelope.updateOne(
-      {"_id": req.params.envelopeId},
-      {$inc: {envelopeBalance: -req.body.amount}}
-    )
-    .then(envelope => {
-      res.json(envelope)
-    })
-    .catch(err => {
-      res.status(404).json(err)
-    })
+    if(req.body.operation == "add") {
+      Envelope.updateOne(
+        {"_id": req.params.envelopeId},
+        {$inc: {envelopeBalance: req.body.amount}}
+      )
+      .then(envelope => {
+        res.json(envelope)
+      })
+      .catch(err => {
+        res.status(404).json(err)
+      })
+    } else if (req.body.operation == "subtract") {
+      Envelope.updateOne(
+        {"_id": req.params.envelopeId},
+        {$inc: {envelopeBalance: -req.body.amount}}
+      )
+      .then(envelope => {
+        res.json(envelope)
+      })
+      .catch(err => {
+        res.status(404).json(err)
+      })
+    }
+
   })
 
   module.exports = router;
