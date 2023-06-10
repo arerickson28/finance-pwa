@@ -3,15 +3,6 @@ const router = require('express').Router();
 const { Account } = require('../../models/Account');
 
 
-
-router.get("/hey", async (req, res) => {
-    try {
-        res.send("hey")
-    } catch (err) {
-        console.log(err)
-    }
-})
-
 //create account by user
 router.post("/", async ({body}, res) => {
     Account.create(body)
@@ -25,7 +16,7 @@ router.post("/", async ({body}, res) => {
 
 // get account by user
   router.get("/userId/:userId",(req, res) => {
-    User.findOne({ 'userId': req.params.userId })
+    Account.findOne({ 'userId': req.params.userId })
     .then(account => {
         res.json(account);
       })
@@ -34,8 +25,16 @@ router.post("/", async ({body}, res) => {
       });
   } )
 
-
-
+//update account balance
+router.put("/accountId/:accountId", (req, res) => {
+  Account.findByIdAndUpdate(req.params.accountId, {"balance": req.body.newBalance})
+  .then(account => {
+    res.json(account)
+  })
+  .catch(err => {
+    res.status(404).json(err)
+  })
+})
 
 
 //To deduct expense ammount from checking balance once it's applied

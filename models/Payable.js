@@ -22,4 +22,4 @@ const payableSchema = new Schema({
 
 const Payable = mongoose.model("Payable", payableSchema);
 
-module.exports = {Payable, payableSchema};
+module.exports = {Payable};

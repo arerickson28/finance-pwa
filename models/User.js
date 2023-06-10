@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const {Account, accountSchema} = require("./Account")
 
 const Schema = mongoose.Schema;
 
@@ -31,4 +30,4 @@ const userSchema = new Schema({
 
 const User = mongoose.model("User", userSchema);
 
-module.exports = {User, userSchema};
+module.exports = {User};

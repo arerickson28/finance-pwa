@@ -47,8 +47,22 @@ router.post("/", ({body}, res) => {
   })
 
   //update envelope balance
+  // router.put("/envelopeId/:envelopeId", (req, res) => {
+  //   Envelope.findByIdAndUpdate(req.params.envelopeId, {"envelopeBalance": req.body.newBalance})
+  //   .then(envelope => {
+  //     res.json(envelope)
+  //   })
+  //   .catch(err => {
+  //     res.status(404).json(err)
+  //   })
+  // })
+
+  //subtract from envelope balance
   router.put("/envelopeId/:envelopeId", (req, res) => {
-    Envelope.findByIdAndUpdate(req.params.envelopeId, {"envelopeBalance": req.body.newBalance})
+    Envelope.updateOne(
+      {"_id": req.params.envelopeId},
+      {$inc: {envelopeBalance: -req.body.amount}}
+    )
     .then(envelope => {
       res.json(envelope)
     })

@@ -17,11 +17,11 @@ const transactionSchema = new Schema({
         required: true,
     },
     date: {
-        type: Date,
+        type: String,
         required: true
     }
 })
 
 const Transaction = mongoose.model("Transaction", transactionSchema);
 
-module.exports = {Transaction, transactionSchema};
+module.exports = {Transaction};

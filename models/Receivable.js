@@ -22,4 +22,4 @@ const receivableSchema = new Schema({
 
 const Receivable = mongoose.model("Receivable", receivableSchema);
 
-module.exports = {Receivable, receivableSchema};
+module.exports = {Receivable};

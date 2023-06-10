@@ -5,3 +5,8 @@
 - Tag thing??
 - Savings (can have envelopes)
 - Transaction list for expense
+- Front-end
+- Progressive-web-app aspect
+- Email for forgotten password?
+- Run daily task to see if expenses/incomes are due
+- Transactions live for 3 months, task once a week to clear
