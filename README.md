@@ -1,6 +1,6 @@
 # finance-pwa
 
-##Features
+## Features
 - Checking account
 - Add money to checking
 - Subtract money from checking (with tag?)
@@ -14,7 +14,7 @@
 - Password Reset
 
 
-#Tech
+# Tech
 - MongoDb
 - Express
 - React
@@ -22,7 +22,7 @@
 - Luxon
 
 
-#Schemas
+# Schemas
 - User
     - Username
     - Display Name
@@ -46,3 +46,12 @@
     - frequency of occurrence (some kind of time stamp)
 
 
+# To Run Locally 
+    - Clone repo
+    - From root directory, run `node server.js` to launch backend
+    - In new terminal, navigate to `finance-front-end` directory
+    - Run `npm start` to launch front end
+
+# Tips
+    - Use Insomnia to test endpoints
+    - For development, check out branch for each story
