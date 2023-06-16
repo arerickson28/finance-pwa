@@ -23,6 +23,11 @@ background-color: white;
 display: flex;
 justify-content: space-around;
 align-items: center;
+&:hover {
+    box-shadow: inset 0px 0px 8px 
+    rgb(0,139,139), 0 0 15px rgb(0,139,139) ;
+    }
+}
 `
 
 const TealIncomeDiv = styled.div`
