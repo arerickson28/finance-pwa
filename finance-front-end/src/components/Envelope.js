@@ -1,10 +1,15 @@
 import React from "react"
+import { TealEnvelopeDiv } from "./SyledComponents"
 
-function Envelope() {
+function Envelope({envelope}) {
 
     return (
         <>
-        <h1>This is an envelope component</h1>
+        <TealEnvelopeDiv>
+        <h2>{envelope.envelopeName}</h2>
+        <h3>{envelope.envelopeBalance}</h3>
+        </TealEnvelopeDiv>
+       
         </>
     )
 }

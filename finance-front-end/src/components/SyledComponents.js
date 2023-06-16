@@ -15,6 +15,15 @@ padding: 5px;
 margin: 10px;
 background-color: white;
 `
+const TealEnvelopeDiv = styled.div`
+border: solid 4px rgb(0,139,139);
+padding: 5px;
+margin: 10px;
+background-color: white;
+display: flex;
+justify-content: space-around;
+align-items: center;
+`
 
 const TealIncomeDiv = styled.div`
 border: solid 4px rgb(0,139,139);
@@ -59,5 +68,6 @@ export {
     GoldIncomeDiv, 
     MaroonAccountDiv, 
     RedExpenseDiv,
-    PurpleIncomesDiv
+    PurpleIncomesDiv,
+    TealEnvelopeDiv
 }
